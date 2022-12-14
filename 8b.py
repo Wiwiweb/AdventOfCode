@@ -1,4 +1,4 @@
-from grid import data_to_grid
+from lib.grid import data_to_grid
 
 def score_from_direction(grid, x, y, x_dir, y_dir):
   tree_height = grid[x][y]

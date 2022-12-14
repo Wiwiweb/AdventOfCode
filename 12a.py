@@ -1,5 +1,5 @@
 import math
-from grid import data_to_grid, four_neighbors_indexes, get_item, print_grid
+from lib.grid import data_to_grid, four_neighbors_indexes, get_item, print_grid
 
 def letter_to_height(letter):
     if letter == 'E':
