@@ -21,7 +21,7 @@ for line in lines:
             if point == seg_to:
                 break
             point += diff
-print_grid_range(grid, (0,0), (1000,1000))
+print_grid_range(grid, (300,0), (700,1000))
 
 
 sand = 0
@@ -52,5 +52,5 @@ while True:
         current_tile += Vector(0, 1)
 
 
-print_grid_range(grid, (0,0), (1000,1000))
+print_grid_range(grid, (300,0), (700,1000))
 print(sand)

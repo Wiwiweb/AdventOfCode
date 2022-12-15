@@ -30,6 +30,9 @@ class Vector:
   def to_tuple(self):
     return (self.x, self.y)
 
+  def manhattan_distance(self, other):
+    return abs(self.x - other.x) + abs(self.y - other.y)
+
   def __repr__(self):
     return f"({self.x},{self.y})"
 

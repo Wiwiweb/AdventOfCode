@@ -13,9 +13,8 @@ with open("15-input.txt") as file:
         sensor_x, sensor_y, beacon_x, beacon_y = map(int, matches.groups())
         sensor = Vector(sensor_x, sensor_y)
         beacon = Vector(beacon_x, beacon_y)
+        distance = beacon.manhattan_distance(sensor)
         sensors.append(sensor)
-        diff = beacon - sensor
-        distance = abs(diff.x) + abs(diff.y)
         distances.append(distance)
 
 
@@ -25,8 +24,7 @@ def check_position(pos):
     if pos.y < 0 or 4000000 < pos.y:
         return False
     for sensor_check, distance_check in zip(sensors, distances):
-        diff = sensor_check - pos
-        dist = abs(diff.x) + abs(diff.y)
+        dist = pos.manhattan_distance(sensor_check)
         if dist <= distance_check:
             return False
     print(pos)
@@ -46,11 +44,3 @@ for sensor, distance in zip(sensors, distances):
             i -= 1
         else:
             i += 1
-
-
-
-# diff = pos - sensor
-#     this_pos_distance = abs(diff.x) + abs(diff.y)
-#     if this_pos_distance <= distance:
-#         found = False
-#         break

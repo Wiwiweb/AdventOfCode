@@ -1,5 +1,5 @@
 import copy
-from lib.grid import create_grid, get_item, print_grid_range, set_item
+from lib.grid import create_grid, get_item, print_grid_range, replace_in_grid, set_item
 from lib.vector import Vector
 
 with open("14-input.txt") as file:
@@ -26,7 +26,7 @@ for line in lines:
 # print(highest_y)
 for i in range(len(grid[0])):
     grid[highest_y+2][i] = '#' 
-# print_grid_range(grid, (0,0), (1000,1000))
+# print_grid_range(grid, (300,0), (700,highest_y+2))
 
 
 sand = 0
@@ -57,5 +57,8 @@ while True:
         current_tile += Vector(0, 1)
 
 
-# print_grid_range(grid, (0,0), (1000,1000))
-print(sand)
+grid = replace_in_grid(grid, '.', ' ')
+# grid = replace_in_grid(grid, '#', '■')
+grid = replace_in_grid(grid, 'o', '.')
+print_grid_range(grid, (300,0), (700,highest_y+2))
+# print(sand)
