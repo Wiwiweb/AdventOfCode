@@ -114,8 +114,8 @@ def print_grid(grid):
     print()
 
 def print_grid_range(grid, top_left, bottom_right):
-  for y in range(top_left[1], bottom_right[1]):
-    for x in range(top_left[0], bottom_right[0]):
+  for y in range(top_left[1], bottom_right[1]+1):
+    for x in range(top_left[0], bottom_right[0]+1):
       print(grid[y][x], end='')
     print()
 
