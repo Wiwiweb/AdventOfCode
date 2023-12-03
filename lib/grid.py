@@ -14,17 +14,17 @@ def data_to_grid(data):
 
 def get_item(grid, coords):
   x, y = coords
-  if x < 0 or x >= len(grid):
+  if y < 0 or y >= len(grid):
     return None
-  if y < 0 or y >= len(grid[x]):
+  if x < 0 or x >= len(grid[y]):
     return None
   return grid[y][x]
 
 def set_item(grid, coords, item):
   x, y = coords
-  if x < 0 or x >= len(grid):
+  if y < 0 or y >= len(grid):
     return
-  if y < 0 or y >= len(grid[x]):
+  if x < 0 or x >= len(grid[y]):
     return
   grid[y][x] = item
 
