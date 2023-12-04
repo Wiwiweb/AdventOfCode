@@ -2,7 +2,7 @@ class Vector:
 
   def __init__(self, a, b=None):
     if b == None:
-      self.x, self.y = a
+      self.x, self.y = a, a
     else:
       self.x = a
       self.y = b
